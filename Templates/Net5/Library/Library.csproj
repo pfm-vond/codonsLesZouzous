@@ -1,0 +1,9 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net5.0</TargetFramework>
+    <AssemblyName>TemplateSolution.Project1.Library</AssemblyName>
+    <RootNamespace>TemplateSolution.Project1.Library</RootNamespace>
+  </PropertyGroup>
+
+</Project>
