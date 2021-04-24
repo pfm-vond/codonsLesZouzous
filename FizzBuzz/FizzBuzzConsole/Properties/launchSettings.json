@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "FizzBuzzConsole": {
+      "commandName": "Project",
+      "commandLineArgs": "begin 1 end 100"
+    }
+  }
+}
