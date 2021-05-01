@@ -1,7 +1,7 @@
 ﻿using Microsoft.Extensions.Configuration;
 using System.Threading.Tasks;
 
-namespace ConsoleApp
+namespace LeanFeatureFlag.ConsoleApp
 {
     public record Config();
 
@@ -16,7 +16,7 @@ namespace ConsoleApp
                 .Build();
 
             cfg.GetSection("Config").Get<Config>();
-            
+
             await Task.CompletedTask;
         }
     }
