@@ -1,0 +1,54 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<CodeSnippets xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+  <CodeSnippet Format="1.0.0">
+    <Header>
+      <SnippetTypes>
+        <SnippetType>Expansion</SnippetType>
+      </SnippetTypes>
+      <Title>Xunit Theory Method</Title>
+      <Shortcut>theory</Shortcut>
+      <Description>Code snippet for a theory method in xunit</Description>
+      <Author>Pierre VONDERSHER</Author>
+    </Header>
+    <Snippet>
+      <Imports>
+        <Import>
+          <Namespace>Xunit</Namespace>
+        </Import>
+      </Imports>
+      <Declarations>
+        <Literal>
+          <ID>name</ID>
+          <ToolTip>Replace with the name of the test method</ToolTip>
+          <Default>MyTestMethod</Default>
+        </Literal>
+        <Literal>
+          <ID>paramValue</ID>
+          <Default>"Value"</Default>
+        </Literal>
+        <Literal>
+          <ID>paramType</ID>
+          <Default>string</Default>
+        </Literal>
+        <Literal>
+          <ID>paramName</ID>
+          <Default>name</Default>
+        </Literal>
+        <Literal Editable="false">
+          <ID>Theory</ID>
+          <Function>SimpleTypeName(global::Xunit.Theory)</Function>
+        </Literal>
+        <Literal Editable="false">
+          <ID>InlineData</ID>
+          <Function>SimpleTypeName(global::Xunit.InlineData)</Function>
+        </Literal>
+      </Declarations>
+      <Code Language="csharp"><![CDATA[[$Theory$]
+      [$InlineData$($paramValue$)]
+      public void $name$($paramType$ $paramName$)
+      {
+          $end$
+      }]]></Code>
+    </Snippet>
+  </CodeSnippet>
+</CodeSnippets>
