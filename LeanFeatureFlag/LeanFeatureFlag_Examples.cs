@@ -27,23 +27,23 @@ public class SqlServerDatabase : IFeature<LongTermStorage>
     public Register(ScopeProvider scope, Feature<LongTermStorage> feature)
     {
         feature.Need<IUnitOfWork>()
-                .ResponsibleFor<DataStorageIntegrity>()
+                .EnsureBy<DataStorageIntegrity>()
                 .WithParam("ConnectionString", feature.Config.ConnectionString)
                 .During(scope.Named("Transaction"))
                 .StartingWithMe();
 
         feature.Need(typeof(ISet<>))
-                .ResponsibleFor(typeof(DbSet<>))
+                .EnsureBy(typeof(DbSet<>))
                 .Using<DbContext, T>(dbc => dbc.Set<T>())
                 .During(scope.Named("Transaction"));
 
         feature.Need(typeof(ISet<User>))
-                .ResponsibleFor(typeof(DbSet<User>))
+                .EnsureBy(typeof(DbSet<User>))
                 .Using<DbContext>(dbc => dbc.Users)
                 .During(scope.Named("Transaction"));
 
         feature.Need<Func<UserIdentity, User>>()
-                .ResponsibleFor<RetrievingOrCreatingUser>()
+                .EnsureBy<RetrievingOrCreatingUser>()
                 .During(scope.EachCall());
     }
 }
@@ -53,28 +53,28 @@ public class MemoryDatabase : IFeature
     public Register(ScopeProvider scope, Feature feature)
     {
         feature.Need<IUnitOfWork>()
-                .ResponsibleFor<ListingSet>()
+                .EnsureBy<ListingSet>()
                 .During(scope.Named("Transaction"));
 
         feature.Need(typeof(ISet<>))
-                .ResponsibleFor(typeof(ManagingA<>))
+                .EnsureBy(typeof(ManagingA<>))
                 .During(scope.ProductLifeTime());
 
         feature.Need<Func<UserIdentity, User>>()
-                .ResponsibleFor<RetrievingOrCreatingUser>()
+                .EnsureBy<RetrievingOrCreatingUser>()
                 .During(scope.EachCall());
 
         feature.Need<IDocument>()
-                .ResponsibleFor<DemonstratingReadingDocument>()
+                .EnsureBy<DemonstratingReadingDocument>()
                 .GenerateFake()
                 .During(scope.EachCall());
                 
         feature.Need<IImage>()
-                .ResponsibleFor<Fake<IImage>>()
+                .EnsureBy<Fake<IImage>>()
                 .During(scope.SingleInstance(new Fake<IImage>()));
 
         feature.Need<IAudio>()
-                .ResponsibleFor<Fake<IAudio>>()
+                .EnsureBy<Fake<IAudio>>()
                 .UsingFactory<AudioMaker>()
                 .During(scope.EachCall());
     }

@@ -10,10 +10,10 @@ namespace LeanFeatureFlag.Library
         {
         }
 
-        public ICapabilityBuilder<TCapability> EnsureBy<T>()
-            where T : TCapability
+        public ICapabilityBuilder<TCapability> EnsureBy<TImplementation>()
+            where TImplementation : TCapability
         {
-            Instance = (TCapability)typeof(T).GetConstructor(new Type[0]).Invoke(new object[0]);
+            Instance = (TCapability)typeof(TImplementation).GetConstructor(new Type[0]).Invoke(new object[0]);
             return this;
         }
 
