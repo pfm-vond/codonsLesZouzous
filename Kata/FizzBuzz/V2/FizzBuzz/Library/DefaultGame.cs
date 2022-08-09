@@ -2,10 +2,10 @@
 {
     internal class DefaultGame : IFizzBuzzGame
     {
-        private Factory.Display display;
+        private Display display;
         private readonly IRule ruleToApply;
 
-        public DefaultGame(Factory.Display display, IRule ruleToApply)
+        public DefaultGame(Display display, IRule ruleToApply)
         {
             this.display = display;
             this.ruleToApply = ruleToApply;

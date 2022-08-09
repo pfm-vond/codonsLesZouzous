@@ -12,7 +12,7 @@ namespace FizzBuzz.ConsoleApp
             OverridenMain(Console.WriteLine, args);
         }
 
-        public static void OverridenMain(Factory.Display writeLine, params string[] args)
+        public static void OverridenMain(Display writeLine, params string[] args)
         {
             IConfiguration cfg = new ConfigurationBuilder()
                 .AddCommandLine(args, new Dictionary<string, string> {
@@ -22,7 +22,7 @@ namespace FizzBuzz.ConsoleApp
                 })
                 .Build();
 
-            new Factory(writeLine, cfg)
+            new Factory(new Dependencies(writeLine, cfg))
                 .GetGame()
                 .Play();
         }

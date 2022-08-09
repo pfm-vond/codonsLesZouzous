@@ -9,13 +9,13 @@ namespace FizzBuzz.Library
         private readonly IEnumerable<FeatureNotes> features;
         private readonly IConfiguration config;
         private readonly IFizzBuzzGame game;
-        private readonly Factory.Display display;
+        private readonly Display display;
 
         public ReleaseNoteGame(
             IEnumerable<FeatureNotes> features, 
             IConfiguration cfg,
             IFizzBuzzGame game,
-            Factory.Display display)
+            Display display)
         {
             this.features = features;
             this.config = cfg;

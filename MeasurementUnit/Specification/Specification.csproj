@@ -1,13 +1,12 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>net5.0</TargetFramework>
+    <TargetFramework>net6.0</TargetFramework>
 
     <IsPackable>false</IsPackable>
-    <Nullable>enable</Nullable>
 
-    <AssemblyName>FizzBuzz</AssemblyName>
-    <RootNamespace>FizzBuzz</RootNamespace>
+    <AssemblyName>MeasurementUnit</AssemblyName>
+    <RootNamespace>MeasurementUnit</RootNamespace>
   </PropertyGroup>
 
   <ItemGroup>
@@ -27,8 +26,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\ConsoleApp\ConsoleApp.csproj" />
-    <ProjectReference Include="..\Library\Library.csproj" />
+    <ProjectReference Include="..\Library\InternationalSystemOfUnits.csproj" />
   </ItemGroup>
 
 </Project>

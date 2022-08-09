@@ -4,10 +4,9 @@
     <TargetFramework>net5.0</TargetFramework>
 
     <IsPackable>false</IsPackable>
-    <Nullable>enable</Nullable>
 
-    <AssemblyName>FizzBuzz</AssemblyName>
-    <RootNamespace>FizzBuzz</RootNamespace>
+    <AssemblyName>CodingGames</AssemblyName>
+    <RootNamespace>CodingGames</RootNamespace>
   </PropertyGroup>
 
   <ItemGroup>
@@ -27,7 +26,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\ConsoleApp\ConsoleApp.csproj" />
     <ProjectReference Include="..\Library\Library.csproj" />
   </ItemGroup>
 

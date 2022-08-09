@@ -3,13 +3,12 @@
   <PropertyGroup>
     <OutputType>Exe</OutputType>
     <TargetFramework>net5.0</TargetFramework>
-    <Nullable>enable</Nullable>
-    <AssemblyName>FizzBuzz.ConsoleApp</AssemblyName>
-    <RootNamespace>FizzBuzz.ConsoleApp</RootNamespace>
+    <AssemblyName>Diamond.ConsoleApp</AssemblyName>
+    <RootNamespace>Diamond.ConsoleApp</RootNamespace>
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Microsoft.Extensions.Hosting" Version="5.0.0" />
+    <PackageReference Include="Microsoft.Extensions.Hosting" Version="6.0.0" />
   </ItemGroup>
 
   <ItemGroup>

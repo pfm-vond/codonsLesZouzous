@@ -7,9 +7,9 @@ namespace FizzBuzz.Library
     public class V01 : Module, IVersionModule,
         IIncludeFeature<HundredHelloWorldFeature>
     {
-        private readonly Factory.Display display;
+        private readonly Display display;
 
-        public V01(Factory.Display display)
+        public V01(Display display)
         {
             this.display = display;
         }

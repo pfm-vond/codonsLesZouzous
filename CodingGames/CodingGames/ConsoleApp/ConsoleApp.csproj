@@ -3,9 +3,8 @@
   <PropertyGroup>
     <OutputType>Exe</OutputType>
     <TargetFramework>net5.0</TargetFramework>
-    <Nullable>enable</Nullable>
-    <AssemblyName>FizzBuzz.ConsoleApp</AssemblyName>
-    <RootNamespace>FizzBuzz.ConsoleApp</RootNamespace>
+    <AssemblyName>CodingGames.ConsoleApp</AssemblyName>
+    <RootNamespace>CodingGames.ConsoleApp</RootNamespace>
   </PropertyGroup>
 
   <ItemGroup>

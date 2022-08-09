@@ -4,9 +4,9 @@ namespace FizzBuzz.Library
 {
     internal class DummyGame : IFizzBuzzGame
     {
-        private readonly Factory.Display writeLine;
+        private readonly Display writeLine;
 
-        public DummyGame(Factory.Display writeLine)
+        public DummyGame(Display writeLine)
         {
             this.writeLine = writeLine;
         }

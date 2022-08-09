@@ -5,22 +5,24 @@ using System;
 
 namespace FizzBuzz.Library
 {
-    public class Factory
-    {
-        public delegate void Display(string line);
+    public delegate void Display(string line);
+    
+    public record Dependencies(Display Output, IConfiguration Config);
 
+    public class Factory : IServiceProvider
+    {
         private IContainer Container { get; }
 
-        public Factory(Display display, IConfiguration cfg)
+        public Factory(Dependencies d)
         {
             ContainerBuilder cb = new();
-            string v = cfg["Version"];
+            string v = d.Config["Version"];
 
             cb.RegisterAssemblyVersions(
                 GetType().Assembly,
                 v,
-                c => c.RegisterInstance(display),
-                c => c.RegisterInstance(cfg));
+                c => c.RegisterInstance(d.Output),
+                c => c.RegisterInstance(d.Config));
 
             Container = cb.Build();
         }
@@ -28,6 +30,11 @@ namespace FizzBuzz.Library
         public IFizzBuzzGame GetGame()
         {
             return Container.Resolve<IFizzBuzzGame>();
+        }
+
+        public object GetService(Type serviceType)
+        {
+            throw new NotImplementedException();
         }
     }
 }
